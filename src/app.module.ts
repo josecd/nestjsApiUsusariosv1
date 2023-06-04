@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { PostsModule } from './posts/posts.module';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     database:'usuariosapi',
     entities:[__dirname + '/**/*.entity{.ts,.js}'], /* Sirve para buscar las tablas de la base de datos en todas las carpetas */
     synchronize:true
-  }), UsersModule],
+  }), UsersModule, PostsModule],
   controllers: [AppController],
   providers: [AppService],
 })
